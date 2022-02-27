@@ -22,7 +22,7 @@ def generate_html(pictures):
     for chunk in chunks(pictures, 8):
         lines.append("<tr>")
         for image in chunk:
-            lines.append(f"<td><img src='{image}' width='100'></td>")
+            lines.append(f"<td><img src='{image}' width='150'></td>")
         lines.append("</tr>")
     lines.append("</table></body></html>")
     return "\n".join(lines)

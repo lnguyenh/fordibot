@@ -2,25 +2,27 @@ from datetime import datetime
 from io import BytesIO
 
 import discord
+from discord.ext import commands
 
 from source.commands.shop import generate_shop
 from source.settings import BOT_TOKEN
 
-client = discord.Client(trust_env=True)
+
+bot = commands.Bot(command_prefix="!")
 
 
-@client.event
+@bot.event
 async def on_ready():
-    print(f"{client.user} has connected to Discord!")
+    print(f"{bot.user} has connected to Discord!")
 
 
-@client.event
+@bot.event
 async def on_message(message):
-    if message.author == client.user:
+    if message.author == bot.user:
         return
 
-    if message.content.startswith("hello"):
-        await message.channel.send("Hello!")
+    if message.content.lower().startswith("hello bot"):
+        await message.channel.send("Hello human!")
 
     if message.content.startswith("shop"):
         await message.channel.send(
@@ -30,4 +32,4 @@ async def on_message(message):
         )
 
 
-client.run(BOT_TOKEN)
+bot.run(BOT_TOKEN)
