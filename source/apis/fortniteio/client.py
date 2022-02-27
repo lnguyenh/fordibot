@@ -15,10 +15,13 @@ class FortniteIoApiClient(object):
         return response
 
     def get_stats(self, io_account_id):
-        return self._get(f"stats?account={io_account_id}")
+        return self._get(f"/v1/stats?account={io_account_id}")
 
     def get_lookup(self, name):
-        return self._get(f"lookup?username={name}")
+        return self._get(f"/v1/lookup?username={name}")
+
+    def get_shop(self):
+        return self._get(f"/v2/shop?lang=en")
 
 
 FORTNITE_IO_API_CLIENT = FortniteIoApiClient(api_settings=FORTNITE_IO_API_SETTINGS)
