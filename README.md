@@ -22,14 +22,18 @@ python3 -m venv venv
 . ./venv/bin/activate
 pip install -r requirements.txt
 ```
+
 ### Install wkhtmltopdf
 This bot uses the python library `imgkit` to convert html to images. It relies on the well known lightweight program called `wkhtmltopdf` to be installed. Instructions about how to install `wkhtmltopdf`can be found here: https://pypi.org/project/imgkit/ 
+
 ### Configuration
 You need to create a file called `.env` at the root of this project. Its content should look like:
 ```
 DISCORD_TOKEN="SOME_TOKEN"
 FORTNITE_IO_KEY="SOME_API_KEY"
 ```
+Check the file `settings.py` for more configuration parameters. Look for lines containing `os.getenv()`
+
 ### Run the program
 ```
 . ./venv/bin/activate
