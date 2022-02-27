@@ -49,5 +49,5 @@ Check the file `settings.py` for more configuration parameters. Look for lines c
 ### Run the program
 ```
 . ./venv/bin/activate
-python source/bot.py
+python -m source.bot.py
 ```
