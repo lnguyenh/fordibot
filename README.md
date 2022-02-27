@@ -4,17 +4,18 @@
 This is a Discord bot providing Fortnite goodies to your Discord server.
 
 ## Commands
-## !shop
+### !shop
 Pulls the item shop via API, generates a summary image and posts it in Discord
-## !tourneys
+### !tourneys
 Posts a summary containing all upcoming tournaments. Preferred regions and type of tournaments can be configured.
 
 ## Quickstart
 ### Prepare Discord
 You need to register your bot to Discord, and invite the bot to your Discord server. Follow the instructions from https://discordpy.readthedocs.io/en/stable/discord.html . Save the bot token that you will generate for later.
 
-### Get API key access to Fortniteapi.io
+### Get an API key for Fortniteapi.io
 This project uses the Fortniteio API. To be able to use it, you need to register here: https://fortniteapi.io/ . Save the api key that you will get for later.
+
 ### Prepare Python
 ```
 python3 -m venv venv
