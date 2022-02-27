@@ -1,7 +1,13 @@
 # Fordibot
 
 ## About
-This is a Discord bot providing Fortnite goodies to your Discord server. Currently it simply pulls the current items in the item shop and generates an image to the server when it reacts to some keyword.
+This is a Discord bot providing Fortnite goodies to your Discord server.
+
+## Commands
+## !shop
+Pulls the item shop via API, generates a summary image and posts it in Discord
+## !tourneys
+Posts a summary containing all upcoming tournaments
 
 ## Quickstart
 ### Prepare Discord
