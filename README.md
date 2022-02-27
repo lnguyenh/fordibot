@@ -8,9 +8,9 @@ Credits and resources:
 * **Fortnite IO API:** https://fortniteapi.io/
 
 ## Commands
-### Examples
+### Example
 <p>
-  <img src="docs/images/example.png" width="350" title="Example">
+  <img src="docs/images/example.png" width="30" title="Example">
 </p>
 
 ### !shop
@@ -20,10 +20,10 @@ Posts a summary containing all upcoming tournaments. Preferred regions and type 
 
 ## Quickstart
 ### Prepare Discord
-You need to register your bot to Discord, and invite the bot to your Discord server. Follow the instructions from https://discordpy.readthedocs.io/en/stable/discord.html . Save the bot token that you generate for later.
+You need to register your bot to Discord, and invite the bot to your Discord server. Follow the instructions from https://discordpy.readthedocs.io/en/stable/discord.html . Save the bot token somewhere, you will need it later.
 
 ### Get an API key for Fortniteapi.io
-This project uses the Fortniteio API. To be able to use it, you need to register here: https://fortniteapi.io/ . Save the api key that you get for later.
+This project uses the Fortniteio API. To be able to use it, you need to register here: https://fortniteapi.io/ . Save the api key somewhere, you will need it later.
 
 ### Prepare Python
 ```
