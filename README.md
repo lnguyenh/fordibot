@@ -7,16 +7,22 @@ Credits and resources:
 * **Discord.py:** https://discordpy.readthedocs.io/en/stable/index.html
 * **Fortnite IO API:** https://fortniteapi.io/
 
-## Commands
-### Example
+## Features
+### Commands
+#### Example
 <p>
   <img src="docs/images/example.png" width="300" title="Example">
 </p>
 
-### !shop
+#### !shop
 Pulls the item shop via API, generates a summary image and posts it in Discord
-### !tourneys
+
+#### !tourneys
 Posts a summary containing all upcoming tournaments. Preferred regions and type of tournaments can be configured.
+
+### Periodic tasks
+* Once a day (configurable), it can generate an image with the latest item shop content and post it in a given channel
+* Every X (configurable) minutes, it checks whether a tourney is about to start and posts a reminder in a given channel if needed
 
 ## Quickstart
 ### Prepare Discord
