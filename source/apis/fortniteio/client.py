@@ -1,6 +1,6 @@
 import requests
 
-from source.settings import FORTNITE_IO_API_SETTINGS
+from source.settings import FORTNITE_IO_API_SETTINGS, CURRENT_SEASON
 
 
 class FortniteIoApiClient(object):
@@ -22,6 +22,11 @@ class FortniteIoApiClient(object):
 
     def get_shop(self):
         return self._get(f"/v2/shop?lang=en")
+
+    def get_tournaments(self, region=None, season=None):
+        region = region or "EU"
+        season = season or CURRENT_SEASON
+        return self._get(f"v1/events/list?lang=en&region={region}&season={season}")
 
 
 FORTNITE_IO_API_CLIENT = FortniteIoApiClient(api_settings=FORTNITE_IO_API_SETTINGS)

@@ -1,15 +1,19 @@
+from datetime import datetime
+
 import imgkit
 from source.apis.fortniteio.client import FORTNITE_IO_API_CLIENT
+
 
 SMALL_WIDTH_FORCING_MARGIN_REMOVAL = 500
 
 
-def generate_shop():
+async def generate_shop():
     items = fetch_shop()
     pictures = [item["displayAssets"][0]["full_background"] for item in items]
     as_html = generate_html(pictures)
     as_png = convert_to_png(as_html)
-    return as_png
+    filename = f"shop-{datetime.now()}.png"
+    return as_png, filename
 
 
 def chunks(my_list, n):
