@@ -8,6 +8,11 @@ Credits and resources:
 * **Fortnite IO API:** https://fortniteapi.io/
 
 ## Commands
+### Examples
+<p>
+  <img src="docs/images/example.png" width="350" title="Example">
+</p>
+
 ### !shop
 Pulls the item shop via API, generates a summary image and posts it in Discord
 ### !tourneys
