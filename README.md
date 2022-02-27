@@ -36,7 +36,9 @@ pip install -r requirements.txt
 This bot uses the python library `imgkit` to convert html to images. It relies on the lightweight program `wkhtmltopdf` to be installed. Instructions about how to install `wkhtmltopdf`can be found here: https://pypi.org/project/imgkit/ 
 
 ### Configuration
-You need to create a file called `.env` at the root of this project. Its content should look like:
+You need to create a file called `.env` at the root of this project. This is **very important** as this is where you can add the secret tokens and API keys, and configure further the bot.
+
+Its content should look like:
 ```
 DISCORD_TOKEN="SOME_TOKEN"
 FORTNITE_IO_KEY="SOME_API_KEY"
