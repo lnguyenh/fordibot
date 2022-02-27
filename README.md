@@ -1,4 +1,4 @@
-# Fordibot
+# <img src="https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/ghost.svg" card_color="#40DBB0" width="50" height="50" style="vertical-align:bottom"/> Fordibot
 
 ## About
 This is a Discord bot providing Fortnite goodies to your Discord server.
