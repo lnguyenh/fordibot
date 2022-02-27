@@ -15,10 +15,10 @@ Posts a summary containing all upcoming tournaments. Preferred regions and type 
 
 ## Quickstart
 ### Prepare Discord
-You need to register your bot to Discord, and invite the bot to your Discord server. Follow the instructions from https://discordpy.readthedocs.io/en/stable/discord.html . Save the bot token that you will generate for later.
+You need to register your bot to Discord, and invite the bot to your Discord server. Follow the instructions from https://discordpy.readthedocs.io/en/stable/discord.html . Save the bot token that you generate for later.
 
 ### Get an API key for Fortniteapi.io
-This project uses the Fortniteio API. To be able to use it, you need to register here: https://fortniteapi.io/ . Save the api key that you will get for later.
+This project uses the Fortniteio API. To be able to use it, you need to register here: https://fortniteapi.io/ . Save the api key that you get for later.
 
 ### Prepare Python
 ```
@@ -28,7 +28,7 @@ pip install -r requirements.txt
 ```
 
 ### Install wkhtmltopdf
-This bot uses the python library `imgkit` to convert html to images. It relies on the well known lightweight program called `wkhtmltopdf` to be installed. Instructions about how to install `wkhtmltopdf`can be found here: https://pypi.org/project/imgkit/ 
+This bot uses the python library `imgkit` to convert html to images. It relies on the lightweight program `wkhtmltopdf` to be installed. Instructions about how to install `wkhtmltopdf`can be found here: https://pypi.org/project/imgkit/ 
 
 ### Configuration
 You need to create a file called `.env` at the root of this project. Its content should look like:
