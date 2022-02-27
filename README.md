@@ -42,6 +42,7 @@ Its content should look like:
 ```
 DISCORD_TOKEN="SOME_TOKEN"
 FORTNITE_IO_KEY="SOME_API_KEY"
+SHOP_CHANNEL_ID="CHANNEL_ID_WHERE_UPDATES_WILL_BE_POSTED"
 ```
 Check the file `settings.py` for more configuration parameters. Look for lines containing `os.getenv()`
 

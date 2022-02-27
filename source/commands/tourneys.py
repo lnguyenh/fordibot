@@ -1,31 +1,62 @@
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from dateutil import parser
-import pytz
 
 from source.apis.fortniteio.client import FORTNITE_IO_API_CLIENT
-from source.settings import INTERESTING_REGIONS, INTERESTING_EVENTS_KEYWORDS
+from source.settings import (
+    INTERESTING_REGIONS,
+    INTERESTING_EVENTS_KEYWORDS,
+    BASE_TZ,
+    EXTRA_TZ,
+    TOURNEY_REMINDER_PERIOD,
+)
+
+
+def get_future_sessions():
+    tourneys = fetch_tourneys()
+    sessions = get_upcoming_sessions(tourneys)
+    return sessions
 
 
 async def get_future_tournaments():
-    tourneys = fetch_tourneys()
-    sessions = get_upcoming_sessions(tourneys)
+    sessions = get_future_sessions()
     as_text = format_sessions(sessions)
     return as_text
 
 
+def display_time(t, tz):
+    return f"{t.astimezone(tz).strftime('%H:%M')}"
+
+
 def format_sessions(sessions):
     text = ""
-    paris_tz = pytz.timezone("Europe/Paris")
-    london_tz = pytz.timezone("Europe/London")
     for session in sessions:
         text += (
             f"{session['date']}"
-            f"  [{session['start'].astimezone(paris_tz).strftime('%H:%M')} "
-            f"-{session['end'].astimezone(paris_tz).strftime('%H:%M')}]"
-            f"  [UK: {session['start'].astimezone(london_tz).strftime('%H:%M')}"
-            f"-{session['end'].astimezone(london_tz).strftime('%H:%M')}]:"
-            f"  {session['region']}-{session['line1']}-{session['line2']}\n"
+            f"  [{display_time(session['start'], BASE_TZ['tz'])}"
+            f"-{display_time(session['end'], BASE_TZ['tz'])}]"
         )
+        for extra_tz in EXTRA_TZ:
+            text += (
+                f"  [{extra_tz['name']}: {display_time(session['start'], extra_tz['tz'])}"
+                f"-{display_time(session['end'], extra_tz['tz'])}]:"
+            )
+        text += f"  {session['region']}-{session['line1']}-{session['line2']}\n"
+    return text
+
+
+async def get_tourney_reminder():
+    text = ""
+    sessions = get_future_sessions()
+    now = datetime.now(BASE_TZ["tz"])
+    for session in sessions:
+        start_time = session["start"]
+        delta = start_time - now
+        if delta < timedelta(minutes=TOURNEY_REMINDER_PERIOD) and now < start_time:
+            delta_in_minutes = int(delta.seconds / 60)
+            text += (
+                f"**Reminder:** "
+                f"  {session['region']}-{session['line1']}-{session['line2']} starts in {delta_in_minutes} minutes \n"
+            )
     return text
 
 
