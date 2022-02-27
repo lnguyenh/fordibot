@@ -10,7 +10,7 @@ Credits and resources:
 ## Commands
 ### Example
 <p>
-  <img src="docs/images/example.png" width="30" title="Example">
+  <img src="docs/images/example.png" width="300" title="Example">
 </p>
 
 ### !shop
