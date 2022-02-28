@@ -1,6 +1,6 @@
 import requests
 
-from source.settings import FORTNITE_IO_API_SETTINGS, CURRENT_SEASON
+from fordibot.settings import FORTNITE_IO_API_SETTINGS, CURRENT_SEASON
 
 
 class FortniteIoApiClient(object):

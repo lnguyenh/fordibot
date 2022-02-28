@@ -4,9 +4,9 @@ from io import BytesIO
 import discord
 from discord.ext import commands, tasks
 
-from source.commands.shop import generate_shop
-from source.commands.tourneys import get_future_tournaments, get_tourney_reminder
-from source.settings import (
+from fordibot.commands.shop import generate_shop
+from fordibot.commands.tourneys import get_future_tournaments, get_tourney_reminder
+from fordibot.settings import (
     BOT_TOKEN,
     SHOP_REFRESH_HOUR,
     SHOP_CHANNEL_ID,

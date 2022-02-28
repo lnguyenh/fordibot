@@ -1,8 +1,8 @@
 from datetime import datetime, timezone, timedelta
 from dateutil import parser
 
-from source.apis.fortniteio.client import FORTNITE_IO_API_CLIENT
-from source.settings import (
+from fordibot.apis.fortniteio.client import FORTNITE_IO_API_CLIENT
+from fordibot.settings import (
     INTERESTING_REGIONS,
     INTERESTING_EVENTS_KEYWORDS,
     BASE_TZ,

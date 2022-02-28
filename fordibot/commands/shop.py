@@ -1,7 +1,7 @@
 from datetime import datetime
 
 import imgkit
-from source.apis.fortniteio.client import FORTNITE_IO_API_CLIENT
+from fordibot.apis.fortniteio.client import FORTNITE_IO_API_CLIENT
 
 
 SMALL_WIDTH_FORCING_MARGIN_REMOVAL = 500

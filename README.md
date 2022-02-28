@@ -55,5 +55,5 @@ Check the file `settings.py` for more configuration parameters. Look for lines c
 ### Run the program
 ```
 . ./venv/bin/activate
-python -m source.bot.py
+python -m fordibot.bot.py
 ```
