@@ -1,7 +1,7 @@
 # <img src="https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/ghost.svg" card_color="#40DBB0" width="50" height="50" style="vertical-align:middle"/> Fordibot
 
 ## About
-Discord bot providing Fortnite-related commands and periodic tasks to your Discord server.
+Discord bot providing Fortnite-related functionalities to Discord server.
 
 Credits and resources:
 * **Discord.py:** https://discordpy.readthedocs.io/en/stable/index.html
