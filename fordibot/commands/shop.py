@@ -26,14 +26,18 @@ def generate_html(pictures):
     for chunk in chunks(pictures, 8):
         lines.append("<tr>")
         for image in chunk:
-            lines.append(f"<td><img src='{image}' width='150'></td>")
+            lines.append(f"<td><img src='{image}' width='200'></td>")
         lines.append("</tr>")
     lines.append("</table></body></html>")
     return "\n".join(lines)
 
 
 def convert_to_png(html_content):
-    options = {"format": "png", "width": SMALL_WIDTH_FORCING_MARGIN_REMOVAL}
+    options = {
+        "format": "png",
+        "width": SMALL_WIDTH_FORCING_MARGIN_REMOVAL,
+        "quality": 80,
+    }
     return imgkit.from_string(html_content, False, options=options)
 
 
