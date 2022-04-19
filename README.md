@@ -91,8 +91,8 @@ After=dns-ready.service
 
 [Service]
 Type=idle
+# The three following lines may vary depending on your setup and where the code lives on your device
 User=pi
-# The two following lines may vary depending on your setup and where the code lives on your device
 ExecStart=/home/pi/fordibot/venv/bin/python -m fordibot.bot.py
 WorkingDirectory=/home/pi/fordibot
 
