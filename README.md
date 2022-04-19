@@ -59,7 +59,7 @@ python -m fordibot.bot.py
 ```
 
 ## Setup auto-start with systemctl
-This is what you need to do to enable the bot when your device boots. This has been tested on Raspberry pi.
+This is what you need to do to enable the bot when your device boots. This has been tested on Raspberry Pi (Raspbian Buster 10).
 #### 1. Create a dns-ready service file
 ```
 cd /lib/systemd/system
