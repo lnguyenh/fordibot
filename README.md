@@ -80,6 +80,7 @@ WantedBy=multi-user.target
 ```
 #### 3. Create a fordibot service file
 ```
+cd /lib/systemd/system
 sudo vi fordibot.service
 ```
 #### 4. Insert the following content and save the file
