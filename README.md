@@ -57,3 +57,49 @@ Check the file `settings.py` for more configuration parameters. Look for lines c
 . ./venv/bin/activate
 python -m fordibot.bot.py
 ```
+
+### Setup auto-start with systemctl
+This is what you need to do to enable the bot when your device boots. This has been tested on Raspberry pi.
+#### 1. Create a dns-ready service file
+```
+cd /lib/systemd/system
+sudo vi dns-ready.service
+```
+#### 2. Insert the following content and save the file
+```
+[Unit]
+Description=Wait for DNS to come up using 'host'
+After=nss-lookup.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c 'until host fortniteapi.io; do sleep 1; done'
+
+[Install]
+WantedBy=multi-user.target
+```
+#### 3. Create a fordibot service file
+```
+sudo vi fordibot.service
+```
+#### 4. Insert the following content and save the file
+```
+[Unit]
+Description=Fordibot discord bot
+After=dns-ready.service
+
+[Service]
+Type=idle
+User=pi
+# The two following lines may vary depending on your setup and where the code lives on your device
+ExecStart=/home/pi/fordibot/venv/bin/python -m fordibot.bot.py
+WorkingDirectory=/home/pi/fordibot
+
+[Install]
+WantedBy=multi-user.target
+```
+#### 5. Enable both services
+```
+sudo systemctl enable dns-ready --now
+sudo systemctl enable fordibot --now
+```
