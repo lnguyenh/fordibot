@@ -13,7 +13,7 @@ FORTNITE_IO_API_SETTINGS = {
 }
 
 # Current season as of February 2022 is 19
-CURRENT_SEASON = os.getenv("CURRENT_SEASON", 19)
+CURRENT_SEASON = os.getenv("CURRENT_SEASON", 20)
 
 INTERESTING_EVENTS_KEYWORDS = ["fncs", "duoscash"]
 INTERESTING_REGIONS = ["EU", "NAE"]

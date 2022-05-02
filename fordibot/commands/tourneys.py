@@ -10,6 +10,8 @@ from fordibot.settings import (
     TOURNEY_REMINDER_PERIOD,
 )
 
+MAX_LENGTH_MESSAGE = 2000
+
 
 def get_future_sessions():
     tourneys = fetch_tourneys()
@@ -41,7 +43,7 @@ def format_sessions(sessions):
                 f"-{display_time(session['end'], extra_tz['tz'])}]:"
             )
         text += f"  {session['region']}-{session['line1']}-{session['line2']}\n"
-    return text
+    return text[:MAX_LENGTH_MESSAGE]
 
 
 async def get_tourney_reminder():
