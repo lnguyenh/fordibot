@@ -6,5 +6,5 @@ ENV XDG_RUNTIME_DIR=/wkhtmltopdf-folder
 WORKDIR /app
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt
-COPY .. .
+COPY . .
 CMD [ "python3", "-m" , "fordibot.bot"]
