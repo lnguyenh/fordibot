@@ -59,12 +59,12 @@ python -m fordibot.bot.py
 ```
 
 ## Setup autostart
-###Setup auto-start with docker
+### Setup auto-start with docker
 ```
 docker-compose -f docker/docker-compose.yml up --build
 ```
 
-###Setup auto-start with systemctl
+### Setup auto-start with systemctl
 This is what you need to do to enable the bot when your device boots. This has been tested on Raspberry Pi (Raspbian Buster 10).
 #### 1. Create a dns-ready service file
 ```
