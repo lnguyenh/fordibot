@@ -2,8 +2,8 @@ version: '3.8'
 
 services:
   bot:
-    image: fortibot
-    container_name: fortibot
+    image: fordibot
+    container_name: fordibot
     restart: always
     build:
       dockerfile: docker/Dockerfile
