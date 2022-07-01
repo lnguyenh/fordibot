@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  bot:
+    image: fortibot
+    container_name: fortibot
+    restart: always
+    build:
+      dockerfile: docker/Dockerfile
+      context: ../
