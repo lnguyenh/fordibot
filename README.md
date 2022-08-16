@@ -61,7 +61,7 @@ python -m fordibot.bot.py
 ## Setup autostart
 ### Setup auto-start with docker
 ```
-docker-compose -f docker/docker-compose.yml up --build
+docker-compose -f docker/docker-compose.yml up --build -d
 ```
 
 ### Setup auto-start with systemctl

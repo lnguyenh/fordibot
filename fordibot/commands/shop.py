@@ -9,7 +9,11 @@ SMALL_WIDTH_FORCING_MARGIN_REMOVAL = 500
 
 async def generate_shop():
     items = fetch_shop()
-    pictures = [item["displayAssets"][0]["full_background"] for item in items]
+    pictures = [
+        item["displayAssets"][0]["full_background"]
+        for item in items
+        if item["displayAssets"]
+    ]
     as_html = generate_html(pictures)
     as_png = convert_to_png(as_html)
     filename = f"shop-{datetime.now()}.png"
@@ -42,7 +46,8 @@ def convert_to_png(html_content):
 
 
 def fetch_shop():
-    return FORTNITE_IO_API_CLIENT.get_shop().json()["shop"]
+    results = FORTNITE_IO_API_CLIENT.get_shop().json()
+    return results["shop"]
 
 
 if __name__ == "__main__":
