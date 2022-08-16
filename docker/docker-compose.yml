@@ -5,6 +5,9 @@ services:
     image: fordibot
     container_name: fordibot
     restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
     build:
       dockerfile: docker/Dockerfile
       context: ../
