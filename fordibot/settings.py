@@ -3,7 +3,13 @@ import os
 import pytz as pytz
 from dotenv import load_dotenv
 
-load_dotenv()
+try:
+    # Seems to be needed for docker on linux only??
+    load_dotenv("/app/.env")
+except Exception:
+    load_dotenv()
+
+
 BOT_TOKEN = os.getenv("DISCORD_TOKEN")
 
 FORTNITE_IO_API_SETTINGS = {
