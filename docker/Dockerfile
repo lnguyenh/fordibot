@@ -5,6 +5,7 @@ RUN chmod 0700 /wkhtmltopdf-folder
 ENV XDG_RUNTIME_DIR=/wkhtmltopdf-folder
 WORKDIR /app
 COPY requirements.txt .
+COPY .env .
 RUN pip3 install -r requirements.txt
 COPY . .
 CMD [ "python3", "-m" , "fordibot.bot"]
